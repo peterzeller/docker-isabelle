@@ -14,7 +14,7 @@ USER isabelle
 
 # Isabelle
 WORKDIR /home/isabelle
-RUN curl -L -O  http://isabelle.in.tum.de/dist/Isabelle2019_linux.tar.gz \
+RUN curl -L -O  http://isabelle.in.tum.de/dist/Isabelle2019_linux.tar.gz && \
   tar xzf Isabelle2019_linux.tar.gz && \
   rm Isabelle2019_linux.tar.gz && \
   mv Isabelle2019 Isabelle && \
