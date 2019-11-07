@@ -5,7 +5,7 @@ SHELL ["/bin/bash", "-c"]
 # packages
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y update && \
-  apt-get install -y curl less libfontconfig1 libgomp1 libwww-perl rlwrap unzip texlive-extra-utils && \
+  apt-get install -y curl less libfontconfig1 libgomp1 libwww-perl rlwrap unzip texlive-full && \
   apt-get clean
 
 # user
