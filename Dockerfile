@@ -22,4 +22,4 @@ RUN curl -L -O  http://isabelle.in.tum.de/dist/Isabelle2019_linux.tar.gz && \
   perl -pi -e 's,ISABELLE_LOGIC=.*,ISABELLE_LOGIC=HOL,g;' Isabelle/etc/settings && \
   Isabelle/bin/isabelle build -o system_heaps -b HOL
 
-ENV PATH="/home/isabelle/Isabelle/bin/isabelle:${PATH}"
+ENV PATH="/home/isabelle/Isabelle/bin:${PATH}"
