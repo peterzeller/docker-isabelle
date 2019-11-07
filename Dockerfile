@@ -14,9 +14,12 @@ USER isabelle
 
 # Isabelle
 WORKDIR /home/isabelle
-COPY Isabelle2019_linux.tar.gz .
-RUN tar xzf Isabelle2019_linux.tar.gz && \
+RUN curl -L -O  http://isabelle.in.tum.de/dist/Isabelle2019_linux.tar.gz \
+  tar xzf Isabelle2019_linux.tar.gz && \
+  rm Isabelle2019_linux.tar.gz && \
   mv Isabelle2019 Isabelle && \
   perl -pi -e 's,ISABELLE_HOME_USER=.*,ISABELLE_HOME_USER="\$USER_HOME/.isabelle",g;' Isabelle/etc/settings && \
   perl -pi -e 's,ISABELLE_LOGIC=.*,ISABELLE_LOGIC=HOL,g;' Isabelle/etc/settings && \
   Isabelle/bin/isabelle build -o system_heaps -b HOL
+
+ENV PATH="/home/isabelle/Isabelle/bin/isabelle:${PATH}"
