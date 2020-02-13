@@ -23,12 +23,12 @@ RUN curl -L -O  http://isabelle.in.tum.de/dist/Isabelle2019_linux.tar.gz && \
   Isabelle/bin/isabelle build -o system_heaps -b HOL
 
 # Afp
-RUN curl -L -O https://www.isa-afp.org/release/afp-current.tar.gz && \
+RUN curl -L -O https://www.isa-afp.org/release/afp-2020-02-10.tar.gz && \
   tar xzf afp-current.tar.gz && \
   rm afp-current.tar.gz && \
   mkdir -p ~/.isabelle/Isabelle2019/ && \
-  echo "/home/isabelle/afp-2019-11-04/thys" >> ~/.isabelle/ROOTS && \
-  echo "/home/isabelle/afp-2019-11-04/thys" >> ~/.isabelle/Isabelle2019/ROOTS
+  echo "/home/isabelle/afp-2020-02-10/thys" >> ~/.isabelle/ROOTS && \
+  echo "/home/isabelle/afp-2020-02-10/thys" >> ~/.isabelle/Isabelle2019/ROOTS
 
 
 ENV PATH="/home/isabelle/Isabelle/bin:${PATH}"
