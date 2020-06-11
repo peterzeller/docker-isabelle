@@ -14,21 +14,21 @@ USER isabelle
 
 # Isabelle
 WORKDIR /home/isabelle
-RUN curl -L -O  http://isabelle.in.tum.de/dist/Isabelle2019_linux.tar.gz && \
-  tar xzf Isabelle2019_linux.tar.gz && \
-  rm Isabelle2019_linux.tar.gz && \
-  mv Isabelle2019 Isabelle && \
+RUN curl -L -O  http://isabelle.in.tum.de/dist/Isabelle2020_linux.tar.gz && \
+  tar xzf Isabelle2020_linux.tar.gz && \
+  rm Isabelle2020_linux.tar.gz && \
+  mv Isabelle2020 Isabelle && \
   perl -pi -e 's,ISABELLE_HOME_USER=.*,ISABELLE_HOME_USER="\$USER_HOME/.isabelle",g;' Isabelle/etc/settings && \
   perl -pi -e 's,ISABELLE_LOGIC=.*,ISABELLE_LOGIC=HOL,g;' Isabelle/etc/settings && \
   Isabelle/bin/isabelle build -o system_heaps -b HOL
 
 # Afp
-RUN curl -L -O https://www.isa-afp.org/release/afp-2020-02-10.tar.gz && \
+RUN curl -L -O https://www.isa-afp.org/release/afp-2020-04-30.tar.gz && \
   tar xzf afp-current.tar.gz && \
   rm afp-current.tar.gz && \
-  mkdir -p ~/.isabelle/Isabelle2019/ && \
-  echo "/home/isabelle/afp-2020-02-10/thys" >> ~/.isabelle/ROOTS && \
-  echo "/home/isabelle/afp-2020-02-10/thys" >> ~/.isabelle/Isabelle2019/ROOTS
+  mkdir -p ~/.isabelle/Isabelle2020/ && \
+  echo "/home/isabelle/afp-2020-04-30/thys" >> ~/.isabelle/ROOTS && \
+  echo "/home/isabelle/afp-2020-04-30/thys" >> ~/.isabelle/Isabelle2020/ROOTS
 
 
 ENV PATH="/home/isabelle/Isabelle/bin:${PATH}"

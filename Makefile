@@ -1,2 +1,2 @@
 build:
-	docker build . -t isabelle:2019
+	docker build . -t isabelle:2020
