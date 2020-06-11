@@ -24,8 +24,8 @@ RUN curl -L -O  http://isabelle.in.tum.de/dist/Isabelle2020_linux.tar.gz && \
 
 # Afp
 RUN curl -L -O https://www.isa-afp.org/release/afp-2020-04-30.tar.gz && \
-  tar xzf afp-current.tar.gz && \
-  rm afp-current.tar.gz && \
+  tar xzf afp-2020-04-30.tar.gz && \
+  rm afp-2020-04-30.tar.gz && \
   mkdir -p ~/.isabelle/Isabelle2020/ && \
   echo "/home/isabelle/afp-2020-04-30/thys" >> ~/.isabelle/ROOTS && \
   echo "/home/isabelle/afp-2020-04-30/thys" >> ~/.isabelle/Isabelle2020/ROOTS
